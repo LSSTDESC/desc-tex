@@ -1,71 +1,74 @@
-# start_paper
+# desc-tex
 
-Use `cookiecutter` to make a folder containing everything you need to start writing an LSST DESC paper (either a journal article or a Note). This follows Jonathan Sick's [`lsst_technote_bootstrap`](https://github.com/lsst-sqre/lsst-technote-bootstrap) method, albeit with a simpler set-up.
+This repository contains supporting files to aid writing LSST DESC papers in LaTeX. Requests and suggestions should be raised in the issues.
 
-[![Build Status](https://travis-ci.org/DarkEnergyScienceCollaboration/start_paper.svg?branch=master)](https://travis-ci.org/DarkEnergyScienceCollaboration/start_paper)
+Below:
+* What's here
+* Using DESC macros (`lsstdesc_macros.sty`)
+* Using the DESC standard acknowledgements
+* Using the DESC Note class
+* Using the DESC bibliography
+* How to incorporate the `desc-tex` repo into other projects
+* Acknowledgements
 
-## Why should I use this tool?
+## What's here
 
-1. It'll save you some paper set-up time.
-2. It'll help you comply with the LSST DESC Publication Policy, which places some requirements on papers to state the contributions of its authors.
-3. It'll save you some writing time, by automagically constructing the author list and acknowledgments, and getting the latex styling right,  for you.
+* `ack/` will (**TODO**) contain the standard portion of the Acknowledgements sections of DESC Key and Standard papers.
+* `bib/lsstdesc.bib` will provide a bibliography of DESC papers, to facilitate citing them
+* `bst/` contains bibliography styles for common journals
+* `logos/` contains graphics used in the DESC Note class
+* `styles/` contains class and style files for common journals, the DESC Note class, and useful macros in `lsstdesc_macros.sty`
 
-## How do I use it?
+## Using DESC macros (`lsstdesc_macros.sty`)
 
-You will need to install `cookiecutter`:
-```
-pip install cookiecutter
-```
-Then just do:
-```
-cookiecutter https://github.com/DarkEnergyScienceCollaboration/start_paper.git
-```
-This will ask you some questions. Here's an example session:
-```
-author [Initial author]: Phil Marshall
-affiliation [Initial author's affiliation]: SLAC National Accelerator Laboratory, Menlo Park, CA 94025
-email [Initial author's email address]: pjm@slac.stanford.edu
-title [The Title of This Paper]: How to Start Writing an LSST DESC Paper
-description [A very brief description of your paper, for the folder's README. (Once you've typed this, you'll be asked for three more items:  the project repo name, a serial number (just choose 0000, it'll get changed later), and a short title (that doesn't contain the repo name). These will then be used to set the paper's folder name, for you to accept or modify. Finally, you'll be asked to choose your Note's format, from [tex/apj/mnras/prl/prd/ipynb/md/rst]. You can always change your mind later, and it's easy to convert a tex Note into a journal paper with the start_paper make command.]: A short paper describing the \texttt{start\_paper} project, including the \texttt{cookiecutter} mechanism and the various templates.
-repo_name [ProjectName]: start_paper
-serial_number [0000]: 0000
-short_title [paper_title]: intro
-folder_name [desc-0000-start_paper-intro]:
-default_format [tex]: tex
-```
+`\usepackage{desc-tex/styles/lsstdesc_macros}`
 
+**TODO**: more documentation
 
-The folder that is then produced (silently!) will have the `folder_name` that you entered, and it will contain several pre-configured template files. For LSST DESC Notes, you have a range of format choices available to you: `md`, `rst`, `ipynb` and `tex`.
+## Using the DESC standard acknowledgements
 
-For latex journal papers, we provide a number of style files for convenience, as well as some useful macros. Just choose a format (`apj`, `apjl`, `mnras`, `prd`, `prl`, `tex`, `md`, `rst`, `ipynb`) and start writing in that file! Templates for all formats are provided, so you can switch to a different one at any time. For example, your `default_format` might be `tex`, but `make apjl` will produce a PDF of your note using the ApJL style file.
+E.g. `\input{desc-tex/ack/standardpaper}`. Note that these files contain only the "standard wording" part of the acknowledgements; specific acknowledements for funding agencies, software, etc. associated with a given paper should still be included (see **SOMEWHERE**).
 
-> For now, `make ipynb` still causes the `main.tex` file to be compiled. In future, we'll enable compilation of PDF or HTML from IPython notebooks.
+## Using the DESC Note class
 
-Don't forget to `git add` and `git commit` the files you edit, in the usual way. You might want to delete the templates you don't use - although if you think you might one day want to upgrade from markdown to latex, or from a Note to a journal article, you could keep those files around.
+**TODO**
 
-## What does it do about author lists, contributions etc?
+## Using the DESC bibliography
 
-`make` generates two new latex files, an author list in the appropriate style
-in `authors.tex`, and a simple listing of author contributions for the
-acknowledgements in `contributions.tex`. This is carried out using the python
-program [`mkauthlist`](https://github.com/DarkEnergySurvey/mkauthlist) which
-the `Makefile` will attempt to install for you. This feature is somewhat
-experimental: if you hit problems, please [write us an
-issue](https://github.com/DarkEnergyScienceCollaboration/start_paper/issues).
-To change the author list and contribution statements, please edit the
-`authors.csv` file. Eventually, this file will be automatically obtained from
-the LSST DESC Publication System, but for now we can track our own
-contributions manually in this way. If you are writing a Note in `markdown`,
-`rst` or `ipynb` format, you'll need to add your contribution list to your main
-file by hand.
+`\bibliography{desc-tex/bib/lsstdesc,<other .bib file(s)>}`
 
+Note that, currently, we plan on including only DESC papers in `lsstdesc.bib`.
 
-## Licence, credits etc
+## How to incorporate the `desc-tex` repo into other projects
 
-People developing this project:
-* Phil Marshall [(@drphilmarshall)](https://github.com/drphilmarshall)
-* Alex Drlica-Wagner [(@kadrlica)](https://github.com/kadrlica)
-* Heather Kelly [(@heather999)](https://github.com/heather999)
-* Jonathan Sick [(@jonathansick)](https://github.com/jonathansick)
+### If your paper is not in a Git repo
 
-This is open source software, available under the BSD license. If you are interested in this project, please do drop us a line via the hyperlinked contact names above, or by [writing us an issue](https://github.com/DarkEnergyScienceCollaboration/start_paper/issues).
+Clone `desc-tex` as normal: `git clone git@github.com:LSSTDESC/desc-tex.git`
+
+### To add `desc-tex` to a paper in a Git repo
+
+Add `desc-tex` as a submodule: `git submodule add git@github.com:LSSTDESC/desc-tex.git`. The `desc-tex` folder now operates as its own independent repository; the parent repository is aware of it and tracks what state `desc-tex` is in, but does not actually version its files. You can interact with `desc-tex` in the usual way when it is the working directory, e.g. to update it: `cd desc-tex; git pull`.
+
+### If you have cloned a repo that includes `desc-tex` as a submodule
+
+If you used the `--recursive` flag when cloning, everything will be set up. Otherwise, you will see an empty `desc-tex/` folder. Run `git submodule update --init`. Thereafter, everything behaves as in the case above.
+
+## Acknowledgements
+
+Much of the material in `desc-tex` was cruelly appropriated from [`start_paper`](https://github.com/LSSTDESC/start_paper), which was developed by 
+* Phil Marshall
+* Alex Drlica-Wagner
+* Heather Kelly
+* Jonathan Sick
+
+The DESC Note class is maintained by **WHO?**.
+
+Otherwise, this project is currently the responsibility of the DESC Publications Board:
+* Seth Digel (Publications Manager)
+* Pierre Astier
+* David Kirkby
+* Rachel Mandelbaum
+* Adam Mantz
+* Phil Marshall
+* Hiranya Peiris
+* Michael Wood-Vasey
