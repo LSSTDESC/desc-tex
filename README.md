@@ -13,11 +13,11 @@ Below:
 
 ## What's here
 
-* `ack/` will (**TODO**) contain the standard portion of the Acknowledgements sections of DESC Key and Standard papers.
-* `bib/lsstdesc.bib` will provide a bibliography of DESC papers, to facilitate citing them
-* `bst/` contains bibliography styles for common journals
-* `logos/` contains graphics used in the DESC Note class
-* `styles/` contains class and style files for common journals, the DESC Note class, and useful macros in `lsstdesc_macros.sty`
+* [`ack/`](ack/) will (**TODO**) contain the standard portion of the Acknowledgements sections of DESC Key and Standard papers.
+* [`bib/lsstdesc.bib`](bib/) will provide a bibliography of DESC papers, to facilitate citing them
+* [`bst/`](bst/) contains bibliography styles for common journals
+* [`logos/`](logos/) contains graphics used in the DESC Note class
+* [`styles/`](styles/) contains class and style files for common journals, the DESC Note class, and useful macros in `lsstdesc_macros.sty`
 
 ## Using DESC macros (`lsstdesc_macros.sty`)
 
