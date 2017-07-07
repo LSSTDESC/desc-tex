@@ -45,6 +45,8 @@ Note that, currently, we plan on including only DESC papers in `lsstdesc.bib`.
 
 Clone `desc-tex` as normal: `git clone git@github.com:LSSTDESC/desc-tex.git`
 
+If you later `git init` to turn your project into a repository, it shouldn't be necessary to remove `desc-tex` first. After creating the repo, just run the `submodule add` command as in the next case, and `git` will figure out that `desc-tex` is already present, and simply register it.
+
 ### To add `desc-tex` to a paper in a Git repo
 
 Add `desc-tex` as a submodule: `git submodule add git@github.com:LSSTDESC/desc-tex.git`. The `desc-tex` folder now operates as its own independent repository; the parent repository is aware of it and tracks what state `desc-tex` is in, but does not actually version its files. You can interact with `desc-tex` in the usual way when it is the working directory, e.g. to update it: `cd desc-tex; git pull`.
