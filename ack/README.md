@@ -11,6 +11,7 @@ This paper has undergone internal review in the LSST Dark Energy Science Collabo
 % This work used TBD kindly provided by Not-A-DESC Member and benefitted from comments by Another Non-DESC person.
 % Standard papers only: A.B.C. acknowledges support from grant 1234 from ...
 \input{desc-tex/ack/standard}
+% This work used some telescope which is operated/funded by some agency or consortium or foundation ...
 % We acknowledge the use of An-External-Tool-like-NED-or-ADS.
 ```
 
