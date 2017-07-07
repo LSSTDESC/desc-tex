@@ -13,7 +13,7 @@ Below:
 
 ## What's here
 
-* [`ack/`](ack/) will (**TODO**) contain the standard portion of the Acknowledgements sections of DESC Key and Standard papers.
+* [`ack/`](ack/) contains the standard portion of the Acknowledgements sections of DESC Key and Standard papers.
 * [`bib/lsstdesc.bib`](bib/) will provide a bibliography of DESC papers, to facilitate citing them
 * [`bst/`](bst/) contains bibliography styles for common journals
 * [`logos/`](logos/) contains graphics used in the DESC Note class
@@ -45,6 +45,8 @@ Note that, currently, we plan on including only DESC papers in `lsstdesc.bib`.
 
 Clone `desc-tex` as normal: `git clone git@github.com:LSSTDESC/desc-tex.git`
 
+If you later `git init` to turn your project into a repository, it shouldn't be necessary to remove `desc-tex` first. After creating the repo, just run the `submodule add` command as in the next case, and `git` will figure out that `desc-tex` is already present, and simply register it.
+
 ### To add `desc-tex` to a paper in a Git repo
 
 Add `desc-tex` as a submodule: `git submodule add git@github.com:LSSTDESC/desc-tex.git`. The `desc-tex` folder now operates as its own independent repository; the parent repository is aware of it and tracks what state `desc-tex` is in, but does not actually version its files. You can interact with `desc-tex` in the usual way when it is the working directory, e.g. to update it: `cd desc-tex; git pull`.
@@ -64,7 +66,7 @@ Much of the material in `desc-tex` was cruelly appropriated from [`start_paper`]
 The DESC Note class is maintained by **WHO?**.
 
 Otherwise, this project is currently the responsibility of the DESC Publications Board:
-* Seth Digel (Publications Manager)
+* Seth Digel (Publication Manager)
 * Pierre Astier
 * David Kirkby
 * Rachel Mandelbaum
