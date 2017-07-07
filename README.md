@@ -64,7 +64,7 @@ Much of the material in `desc-tex` was cruelly appropriated from [`start_paper`]
 The DESC Note class is maintained by **WHO?**.
 
 Otherwise, this project is currently the responsibility of the DESC Publications Board:
-* Seth Digel (Publications Manager)
+* Seth Digel (Publication Manager)
 * Pierre Astier
 * David Kirkby
 * Rachel Mandelbaum
