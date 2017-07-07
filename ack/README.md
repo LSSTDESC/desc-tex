@@ -9,7 +9,7 @@ Note that the standard wording is only one part of the acknowledgements. A rough
 This paper has undergone internal review in the LSST Dark Energy Science Collaboration. % REQUIRED
 % Standard papers only: author contribution statements. For examples, see http://blogs.nature.com/nautilus/2007/11/post_12.html
 % This work used TBD kindly provided by Not-A-DESC Member and benefitted from comments by Another Non-DESC person.
-% A.B.C. acknowledges support from grant 1234 from ...
+% Standard papers only: A.B.C. acknowledges support from grant 1234 from ...
 \input{desc-tex/ack/standard}
 % We acknowledge the use of An-External-Tool-like-NED-or-ADS.
 ```
