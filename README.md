@@ -13,7 +13,7 @@ Below:
 
 ## What's here
 
-* [`ack/`](ack/) will (**TODO**) contain the standard portion of the Acknowledgements sections of DESC Key and Standard papers.
+* [`ack/`](ack/) contains the standard portion of the Acknowledgements sections of DESC Key and Standard papers.
 * [`bib/lsstdesc.bib`](bib/) will provide a bibliography of DESC papers, to facilitate citing them
 * [`bst/`](bst/) contains bibliography styles for common journals
 * [`logos/`](logos/) contains graphics used in the DESC Note class
