@@ -31,7 +31,7 @@ E.g. `\input{desc-tex/ack/standard}`. Note that these files contain only the "st
 
 ## Using the DESC Note class
 
-**TODO**
+See the example in the [styles README](styles/).
 
 ## Using the DESC bibliography
 
@@ -63,7 +63,7 @@ Much of the material in `desc-tex` was cruelly appropriated from [`start_paper`]
 * Heather Kelly
 * Jonathan Sick
 
-The DESC Note class is maintained by **WHO?**.
+The DESC Note class is maintained by Alex Drlica-Wagner and Phil Marshall.
 
 Otherwise, this project is currently the responsibility of the DESC Publications Board:
 * Seth Digel (Publication Manager)
