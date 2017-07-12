@@ -27,7 +27,7 @@ Below:
 
 ## Using the DESC standard acknowledgements
 
-E.g. `\input{desc-tex/ack/standardpaper}`. Note that these files contain only the "standard wording" part of the acknowledgements; specific acknowledements for funding agencies, software, etc. associated with a given paper should still be included (see **SOMEWHERE**).
+E.g. `\input{desc-tex/ack/standard}`. Note that these files contain only the "standard wording" part of the acknowledgements; specific acknowledements for funding agencies, software, etc. associated with a given paper should still be included (see [`ack/README.md`](ack/)).
 
 ## Using the DESC Note class
 
