@@ -658,7 +658,7 @@ revtex4-1.cls^^J^^J}\stop
 % Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
 % LSST DESC Notes have a header image instead!
 \vspace*{-1in}
-\includegraphics[width=\textwidth]{.logos/header.png}
+\includegraphics[width=\textwidth]{desc-tex/logos/header.png}
 \par\vspace*{-\baselineskip}\vspace*{0.625in}
 }
 \else
