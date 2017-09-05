@@ -55,13 +55,14 @@ Add `desc-tex` as a submodule: `git submodule add git@github.com:LSSTDESC/desc-t
 
 If you used the `--recursive` flag when cloning, everything will be set up. Otherwise, you will see an empty `desc-tex/` folder. Run `git submodule update --init`. Thereafter, everything behaves as in the case above.
 
-### Standalone deployment
+### Getting `desc-tex` without using Git
 
-Standalone deployment of `desc-tex` is possible by clicking the "Clone or download" button at the top right of this page and selecting "Download ZIP". Automated deployment with [`deploy_from_github_zip.bash`](LSSTDESC/start_paper/blob/master/deploy_from_github_zip.bash) should eventually be possible with:
+Standalone deployment of `desc-tex` is possible by clicking the "Clone or download" button at the top right of this page and selecting "Download ZIP". This can also be automated deployment using the [`deploy_from_github_zip.bash`](LSSTDESC/start_paper/blob/master/deploy_from_github_zip.bash) script, as in
 ```
 bash ./deploy_from_github_zip.bash desc-tex LSSTDESC/desc-tex master
 ```
-Watch [issue #9](/../../issues/9) for updates.
+
+This method is useful, for example, for writing papers in Overleaf, since Overleaf does not support git submodules.
 
 ## Acknowledgements
 
