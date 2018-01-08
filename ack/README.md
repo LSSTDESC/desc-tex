@@ -15,4 +15,4 @@ This paper has undergone internal review in the LSST Dark Energy Science Collabo
 % We acknowledge the use of An-External-Tool-like-NED-or-ADS.
 ```
 
-When in doubt, refer to the [DESC Author Guide](https://github.com/LSSTDESC/Author_Guide/blob/compiled/main.pdf).
+When in doubt, refer to the [DESC Author Guide](https://github.com/LSSTDESC/Author_Guide/raw/compiled/Author_Guide.pdf).
