@@ -281,7 +281,7 @@ access fonts for the \string\astro\space command
  \fi
 
 %% LSST DESC Notes: use fonts that look like GitHub-presented Markdown:
-\usepackage{helvet,mathpple}
+\usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 
 %%%%%%%%%%%%%
@@ -6383,7 +6383,7 @@ width 0pt\relax\fi}}}
 
 
 %% get rid of \jobname Notes being sent to .aux file:
-% Commented out to avoid .bib cache creation (we hope): 
+% Commented out to avoid .bib cache creation (we hope):
 % http://journals.aas.org/authors/aastex/linux.html
 % \let\bibdata@app\relax
 % \def\pre@bibdata{}
