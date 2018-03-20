@@ -283,10 +283,6 @@ access fonts for the \string\astro\space command
 %% LSST DESC Notes: use fonts that look like GitHub-presented Markdown:
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-%% LSST DESC Notes need section numbers in normal san serif font. The following should work, but does not!
-\usepackage{sectsty}
-\allsectionsfont{\sffamily}
-\usepackage{titlesec}
 
 %%%%%%%%%%%%%
 
@@ -839,7 +835,10 @@ revtex4-1.cls^^J^^J}\stop
 
 
 %   ABSTRACT
-\def\frontmatter@abstractfont{\normalsize\parindent=9pt
+% LSST DESC Notes have no indents in their abstracts:
+% \def\frontmatter@abstractfont{\normalsize\parindent=9pt
+% }%
+\def\frontmatter@abstractfont{\normalsize\parindent=0pt
 }%
 %\def\frontmatter@abstractwidth{6in}
 \def\frontmatter@preabstractspace{12pt}
