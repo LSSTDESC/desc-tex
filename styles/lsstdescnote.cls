@@ -1108,8 +1108,11 @@ revtex4-1.cls^^J^^J}\stop
     \refstepcounter{#1} \edef \@svsec {\ApjSectionMarkInTitle
     {\csname the#1\endcsname}}\fi
   \@hangfrom {\hskip #3\relax
-    \ifnum #2=1{\secnum@size {\rm\@svsec~}}%
-    \else {\subsecnum@size {\rm\@svsec~}}\fi }%
+  % LSST DESC Notes have helevetica font section numbers:
+  % \ifnum #2=1{\secnum@size {\rm\@svsec~}}%
+  % \else {\subsecnum@size {\rm\@svsec~}}\fi }%
+  \ifnum #2=1{\secnum@size {\@svsec~}}%
+  \else {\subsecnum@size {\@svsec~}}\fi }%
   {\interlinepenalty \@M
    \ifnum #2=1\sec@upcase{#8}%
    \else \subsec@upcase{#8}\fi\par}\endgroup
