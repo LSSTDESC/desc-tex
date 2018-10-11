@@ -1,0 +1,39 @@
+# Based on the mkauthlist travis set-up at https://github.com/DarkEnergySurvey/mkauthlist/blob/master/.travis.yml
+
+os:
+  - linux
+
+language: python
+python:
+  - "3.6"
+
+notifications:
+  email: false
+
+sudo: required
+
+# To get latex and revtex4-1
+before_install:
+  - yes "" | sudo add-apt-repository ppa:jonathonf/texlive
+  - sudo apt-get update -y
+  - sudo apt-get install -y --no-install-recommends
+     texlive-fonts-recommended
+     texlive-latex-extra
+     texlive-latex-recommended
+     texlive-publishers
+     texlive-generic-recommended
+     latex-xcolor
+
+# Setup python dependencies and install package
+install:
+#  - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+#  - bash miniconda.sh -b -p $HOME/miniconda
+#  - export PATH="$HOME/miniconda/bin:$PATH"
+#  - conda config --set always_yes yes --set changeps1 no
+#  - conda info -a
+#  - conda create -q -n travis-env python=$TRAVIS_PYTHON_VERSION numpy nose -c conda-forge
+#  - source activate travis-env
+#  - python setup.py install
+
+# command to run tests
+script: 
