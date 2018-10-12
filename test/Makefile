@@ -7,8 +7,8 @@ AUX := $(foreach b,$(BSTS),$(b).aux) # $(ROOT).aux
 BBL := $(foreach b,$(BSTS),$(b).bbl) # $(ROOT).bbl
 BLG := $(foreach b,$(BSTS),$(b).blg) # $(ROOT).blg
 PDF := $(ROOT).pdf
-NOTES := $(foreach b,$(BSTS),$(b)Notes.bib) # $(ROOT)Notes.bib 
-ROOTNOTES := $(ROOT)Notes.bib 
+NOTES := $(foreach b,$(BSTS),$(b)Notes.bib) # $(ROOT)Notes.bib
+ROOTNOTES := $(ROOT)Notes.bib
 JUNK := $(BLG) $(ROOT).aux $(ROOT).log $(NOTES) $(ROOTNOTES)
 
 BIB := ../bib/lsstdesc.bib
@@ -34,3 +34,6 @@ $(AUX) $(ROOTNOTES): $(TEX)
 
 $(PDF): $(TEX) $(BBL)
 	pdflatex $(TEX)
+
+html:
+	python make_publication_list.py
