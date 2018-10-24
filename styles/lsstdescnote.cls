@@ -170,6 +170,10 @@ track changes, new `modern' style and much more, by Amy Hendrickson,%
 \newif\ifpreprinttwo
  \DeclareOption{preprint2}{\@two@coltrue\preprinttwotrue\twelvepointtrue}%
 
+%% Provide a switch to not use helvetica
+\newif\ifskiphelvet
+ \DeclareOption{skiphelvet}{\skiphelvettrue} 
+ 
 
 %% New design suggested by
 \DeclareOption{modern}{\@two@colfalse\twelvepointtrue\moderntrue}
@@ -281,8 +285,11 @@ access fonts for the \string\astro\space command
  \fi
 
 %% LSST DESC Notes: use fonts that look like GitHub-presented Markdown:
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
+\ifskiphelvet
+\else
+  \usepackage{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
 
 %%%%%%%%%%%%%
 
