@@ -1,0 +1,18 @@
+\documentclass[modern]{lsstdescnote}
+
+\usepackage{multibib}
+\newcites{apj,mnras}{ApJ,MNRAS}
+
+\begin{document}
+
+\section*{\tt apj.bst}
+\nociteapj{*}
+\bibliographystyleapj{../bst/apj}
+\bibliographyapj{../bib/lsstdesc}
+
+\section*{\tt mnras.bst}
+\nocitemnras{*}
+\bibliographystylemnras{../bst/mnras}
+\bibliographymnras{../bib/lsstdesc}
+
+\end{document}
