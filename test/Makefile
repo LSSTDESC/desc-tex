@@ -25,7 +25,7 @@ JUNK += $(MACROROOT).aux $(MACROROOT).log $(MACROTEX)
 
 .PHONY: default tidy clean bibtest macrotest
 
-default: bibtest macros
+default: bibtest macrotest
 
 bibtest: $(PDF) $(HTML)
 
@@ -53,7 +53,7 @@ $(PDF): $(TEX) $(BBL)
 	pdflatex $(TEX)
 
 $(HTML): $(BIB)
-	pip list 2>/dev/null | grep -q bibtexparser || pip install --upgrade-strategy only-if-needed bibtexparser
+	#pip list 2>/dev/null | grep -q bibtexparser || pip install --upgrade-strategy only-if-needed bibtexparser
 	python make_publication_list.py > $@
 
 
