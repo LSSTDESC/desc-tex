@@ -40,4 +40,3 @@ install:
 # command to run tests
 script:
   - make -C test
-  - make -C test html
