@@ -1,5 +1,7 @@
 export TEXINPUTS := ../styles/:../logos/:
 
+# for bibliography tests
+BIB := ../bib/lsstdesc.bib
 ROOT := bibtest
 BSTS := apj mnras
 TEX := $(ROOT).tex
@@ -10,18 +12,33 @@ PDF := $(ROOT).pdf
 NOTES := $(foreach b,$(BSTS),$(b)Notes.bib) # $(ROOT)Notes.bib
 ROOTNOTES := $(ROOT)Notes.bib
 JUNK := $(BLG) $(ROOT).aux $(ROOT).log $(NOTES) $(ROOTNOTES)
+HTML := $(ROOT).html
 
-BIB := ../bib/lsstdesc.bib
+# for macro tests
+MACROS := ../styles/lsstdesc_macros.sty
+MACROROOT := macro_demo
+MACROTEX := $(MACROROOT).tex
+MACROPDF := $(MACROROOT).pdf
+JUNK += $(MACROROOT).aux $(MACROROOT).log $(MACROTEX)
 
-.PHONY: default tidy clean
 
-default: $(PDF)
+
+.PHONY: default tidy clean bibtest macrotest
+
+default: bibtest macros
+
+bibtest: $(PDF) $(HTML)
+
+macrotest: $(MACROPDF)
 
 tidy:
 	rm -f $(JUNK) $(AUX) $(BBL)
 
 clean: tidy
-	rm -f $(PDF)
+	rm -f $(PDF) $(HTML) $(MACROPDF)
+
+
+# bibliography tests
 
 $(AUX) $(ROOTNOTES): $(TEX)
 	pdflatex $(TEX)
@@ -35,5 +52,16 @@ $(AUX) $(ROOTNOTES): $(TEX)
 $(PDF): $(TEX) $(BBL)
 	pdflatex $(TEX)
 
-html:
-	python make_publication_list.py
+$(HTML): $(BIB)
+	pip list 2>/dev/null | grep -q bibtexparser || pip install --upgrade-strategy only-if-needed bibtexparser
+	python make_publication_list.py > $@
+
+
+# macros test
+
+$(MACROTEX): $(MACROS)
+	awk -f make_macro_demo.awk $< > $@
+
+$(MACROPDF): $(MACROTEX)
+	pdflatex $<
+
