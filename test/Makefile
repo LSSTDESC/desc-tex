@@ -60,7 +60,7 @@ $(HTML): $(BIB)
 # macros test
 
 $(MACROTEX): $(MACROS)
-	awk -f make_macro_demo.awk $< > $@
+	gawk -f make_macro_demo.awk $< > $@
 
 $(MACROPDF): $(MACROTEX)
 	pdflatex $<
