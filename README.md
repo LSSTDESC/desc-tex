@@ -18,24 +18,25 @@ Below:
 * [`bst/`](bst/) contains bibliography styles for common journals
 * [`logos/`](logos/) contains graphics used in the DESC Note class
 * [`styles/`](styles/) contains class and style files for common journals, the DESC Note class, and useful macros in `lsstdesc_macros.sty`
+* [`test/`](test/) tests of the bibliography and macros
 
 ## Using DESC macros (`lsstdesc_macros.sty`)
 
 `\usepackage{desc-tex/styles/lsstdesc_macros}`
 
-**TODO**: more documentation
+One of the [tests](test/) produces a PDF showing how the macros compile. This may be useful.
 
 ## Using the DESC standard acknowledgements
 
 E.g. `\input{desc-tex/ack/standard}`. Note that these files contain only the "standard wording" part of the acknowledgements; specific acknowledements for funding agencies, software, etc. associated with a given paper should still be included (see [`ack/README.md`](ack/)).
 
-## Using the DESC Note class
+## Using the DESC Note and other classes
 
-See the example in the [styles README](styles/).
+Via `\documentclass`. For Notes, see the example in the [styles README](styles/). In general, be aware that these classes may rely on other LaTeX packages/infrastructure that is not included with `desc-tex`.
 
 ## Using the DESC bibliography
 
-`\bibliography{desc-tex/bib/lsstdesc,<other .bib file(s)>}`
+`\bibliography{desc-tex/bib/lsstdesc[,other .bib file(s)]}`
 
 Note that, currently, we plan on including only DESC papers in `lsstdesc.bib`.
 
@@ -57,7 +58,7 @@ If you used the `--recursive` flag when cloning, everything will be set up. Othe
 
 ### Getting `desc-tex` without using Git
 
-Standalone deployment of `desc-tex` is possible by clicking the "Clone or download" button at the top right of this page and selecting "Download ZIP". This can also be automated deployment using the [`deploy_from_github_zip.bash`](LSSTDESC/start_paper/blob/master/deploy_from_github_zip.bash) script, as in
+Standalone deployment of `desc-tex` is possible by clicking the "Clone or download" button at the top right of this page and selecting "Download ZIP". This can also be automated deployment using the [`deploy_from_github_zip.bash`](https://github.com/LSSTDESC/start_paper/blob/master/deploy_from_github_zip.bash) script, as in
 ```
 bash ./deploy_from_github_zip.bash desc-tex LSSTDESC/desc-tex master
 ```
