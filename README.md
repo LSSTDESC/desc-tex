@@ -9,6 +9,7 @@ Below:
 * Using the DESC Note class
 * Using the DESC bibliography
 * How to incorporate the `desc-tex` repo into other projects
+* Posting on arXiv
 * Acknowledgements
 
 ## What's here
@@ -65,6 +66,10 @@ bash ./deploy_from_github_zip.bash desc-tex LSSTDESC/desc-tex master
 
 This method is useful, for example, for writing papers in Overleaf, since Overleaf does not support git submodules.
 
+## Posting on arXiv
+
+If you have used `desc-tex` in developing your paper, for uploading to arXiv you should include the files `lsstdescnote.cls` and `lsstdesc_macros.sty` in the main directory of your upload.  This will allow arXiv to compile your LaTeX source directly with PDFLaTeX.
+
 ## Acknowledgements
 
 Much of the material in `desc-tex` was cruelly appropriated from [`start_paper`](https://github.com/LSSTDESC/start_paper), which was developed by 
@@ -75,12 +80,4 @@ Much of the material in `desc-tex` was cruelly appropriated from [`start_paper`]
 
 The DESC Note class is maintained by Alex Drlica-Wagner and Phil Marshall.
 
-Otherwise, this project is currently the responsibility of the DESC Publications Board:
-* Seth Digel (Publication Manager)
-* Pierre Astier
-* David Kirkby
-* Rachel Mandelbaum
-* Adam Mantz
-* Phil Marshall
-* Hiranya Peiris
-* Michael Wood-Vasey
+Otherwise, this project is currently the responsibility of the [DESC Publication Board](https://confluence.slac.stanford.edu/display/LSSTDESC/Publication+Board)
